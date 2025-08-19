@@ -6,32 +6,59 @@ import Github from "../assets/github.astro";
 import Linkedin from "../assets/linkedin.astro";
 import Cv from "../assets/cv.astro";
 import Arrow from "../assets/arrow.astro";
+import Typewriter from "astro-typewriter";
+
+const greetings = [
+  "Hello",
+  "Hola",
+  "Bonjour",
+  "Hallo",
+  "Ciao",
+  "Olá",
+  "Привет",
+  "こんにちは",
+  "你好",
+  "안녕하세요",
+  "नमस्ते",
+];
 ---
 
 <Layout>
-  <main class="mx-auto max-w-3xl px-5 mb-5 flex flex-col gap-10">
-    <section class="flex items-center justify-center gap-5 pt-8">
-      <Image
-        src={Said}
-        alt="Said's photo"
-        width={128}
-        height={128}
-        class="rounded-full border-6 border-primary"
-      />
+  <main
+    class="md:mx-auto md:max-w-3xl md:px-5 md:mb-5 md:flex md:flex-col md:gap-10"
+  >
+    <section class="md:flex md:items-center md:justify-center md:gap-5 md:pt-8">
+      <div class="flex items-center justify-center">
+        <Image
+          src={Said}
+          alt="Said's photo"
+          width={128}
+          height={128}
+          class="rounded-full border-6 border-primary"
+        />
+      </div>
       <div>
-        <h1 class="text-5xl font-bold font-onest text-primary">What's Up!</h1>
-        <div class="flex gap-1">
-          <h2 class="text-2xl text-primary font-bold font-onest">I'm</h2>
-          <h2 class="text-2xl text-accent font-bold uppercase font-onest">
-            Saidrexx
-          </h2>
+        <div>
+          <h1
+            class="flex items-center justify-center text-5xl font-bold font-onest text-primary md:block"
+          >
+            <Typewriter messages={greetings} />
+          </h1>
+          <div class="flex gap-1 items-center justify-center md:block">
+            <span class="text-2xl text-primary font-bold font-onest">I'm</span>
+            <span class="text-2xl text-accent font-bold uppercase font-onest">
+              Saidrexx
+            </span>
+          </div>
+          <h3
+            class="flex items-center justify-center text-md font-bold font-onest text-primary md:block md:text-lg"
+          >
+            Computer Systems Engineer
+          </h3>
         </div>
-        <h3 class="text-lg font-bold font-onest text-primary">
-          Computer Systems Engineer
-        </h3>
-        <div class="flex gap-3 pt-2">
+        <div class="flex gap-3 pt-2 items-center justify-center">
           <button
-            class="group relative inline-flex max-h-[3.75rem] items-center justify-center rounded-xl px-4 py-2 text-lg outline-none transition duration-300 bg-secondary hidden pl-[3.25rem] sm:flex"
+            class="group relative inline-flex max-h-[3.75rem] items-center justify-center rounded-xl px-4 py-2 md:text-lg outline-none transition duration-300 bg-secondary hidden pl-[3.25rem] sm:flex"
           >
             <Github
               class="ease absolute left-5 translate-x-0 opacity-100 transition duration-300 group-hover:-translate-x-full group-hover:scale-x-50 group-hover:opacity-0 group-hover:blur-sm"
@@ -52,7 +79,7 @@ import Arrow from "../assets/arrow.astro";
           </button>
 
           <button
-            class="group relative inline-flex max-h-[3.75rem] items-center justify-center rounded-xl px-4 py-2 text-lg outline-none transition duration-300 bg-secondary hidden pl-[3.25rem] sm:flex"
+            class="group relative inline-flex max-h-[3.75rem] items-center justify-center rounded-xl px-4 py-2 md:text-lg outline-none transition duration-300 bg-secondary hidden pl-[3.25rem] sm:flex"
           >
             <Linkedin
               class="ease absolute left-5 translate-x-0 opacity-100 transition duration-300 group-hover:-translate-x-full group-hover:scale-x-50 group-hover:opacity-0 group-hover:blur-sm"
@@ -72,7 +99,7 @@ import Arrow from "../assets/arrow.astro";
             />
           </button>
           <button
-            class="group relative inline-flex max-h-[3.75rem] items-center justify-center rounded-xl px-4 py-2 text-lg outline-none transition duration-300 bg-secondary hidden pl-[3.25rem] sm:flex"
+            class="group relative inline-flex max-h-[3.75rem] items-center justify-center rounded-xl px-4 py-2 md:text-lg outline-none transition duration-300 bg-secondary hidden pl-[3.25rem] sm:flex"
           >
             <Cv
               class="ease absolute left-5 translate-x-0 opacity-100 transition duration-300 group-hover:-translate-x-full group-hover:scale-x-50 group-hover:opacity-0 group-hover:blur-sm"
