@@ -6,6 +6,7 @@ import Github from "../assets/github.astro";
 import Linkedin from "../assets/linkedin.astro";
 import Cv from "../assets/cv.astro";
 import Arrow from "../assets/arrow.astro";
+import ArrowDown from "../assets/arrow_down.astro";
 import Typewriter from "astro-typewriter";
 
 const greetings = [
@@ -57,7 +58,10 @@ const greetings = [
           </h3>
         </div>
         <div class="flex gap-3 pt-2 items-center justify-center">
-          <button
+          <a
+            href="https://github.com/saidrexx"
+            target="_blank"
+            rel="noopener noreferrer"
             class="group relative inline-flex max-h-[3.75rem] items-center justify-center rounded-xl px-4 py-2 md:text-lg outline-none transition duration-300 bg-secondary hidden pl-[3.25rem] sm:flex"
           >
             <Github
@@ -76,9 +80,12 @@ const greetings = [
               height={24}
               fill="#fff"
             />
-          </button>
+          </a>
 
-          <button
+          <a
+            href="https://www.linkedin.com/in/saidrexxdemeneghi"
+            target="_blank"
+            rel="noopener noreferrer"
             class="group relative inline-flex max-h-[3.75rem] items-center justify-center rounded-xl px-4 py-2 md:text-lg outline-none transition duration-300 bg-secondary hidden pl-[3.25rem] sm:flex"
           >
             <Linkedin
@@ -97,9 +104,10 @@ const greetings = [
               height={24}
               fill="#fff"
             />
-          </button>
-          <button
-            class="group relative inline-flex max-h-[3.75rem] items-center justify-center rounded-xl px-4 py-2 md:text-lg outline-none transition duration-300 bg-secondary hidden pl-[3.25rem] sm:flex"
+          </a>
+          <a
+            id="cv_button"
+            class="group relative inline-flex max-h-[3.75rem] items-center justify-center rounded-xl px-4 py-2 md:text-lg outline-none transition duration-300 bg-secondary hidden pl-[3.25rem] sm:flex cursor-pointer"
           >
             <Cv
               class="ease absolute left-5 translate-x-0 opacity-100 transition duration-300 group-hover:-translate-x-full group-hover:scale-x-50 group-hover:opacity-0 group-hover:blur-sm"
@@ -111,15 +119,24 @@ const greetings = [
               class="ease translate-x-0 transition duration-300 group-hover:-translate-x-8 font-onest text-white"
               >Curriculum</span
             >
-            <Arrow
+            <ArrowDown
               class="ease absolute right-5 translate-x-full scale-x-50 opacity-0 blur-sm transition duration-300 group-hover:translate-x-0 group-hover:scale-x-100 group-hover:opacity-100 group-hover:blur-none"
               width={24}
               height={24}
               fill="#fff"
             />
-          </button>
+          </a>
         </div>
       </div>
     </section>
   </main>
 </Layout>
+
+<script>
+  document.getElementById("cv_button")!.addEventListener("click", () => {
+    const link = document.createElement("a");
+    link.href = "../assets/download/CV_Rafael_Said_Hernández_Demeneghi.pdf";
+    link.download = "CV_Rafael_Said_Hernández_Demeneghi.pdf";
+    link.click();
+  });
+</script>
