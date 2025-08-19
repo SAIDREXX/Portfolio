@@ -1,11 +1,98 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import Said from "../assets/me.webp";
+import Github from "../assets/github.astro";
+import Linkedin from "../assets/linkedin.astro";
+import Cv from "../assets/cv.astro";
+import Arrow from "../assets/arrow.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <main class="mx-auto max-w-3xl px-5 mb-5 flex flex-col gap-10">
+    <section class="flex items-center justify-center gap-5 pt-8">
+      <Image
+        src={Said}
+        alt="Said's photo"
+        width={128}
+        height={128}
+        class="rounded-full border-6 border-primary"
+      />
+      <div>
+        <h1 class="text-5xl font-bold font-onest text-primary">What's Up!</h1>
+        <div class="flex gap-1">
+          <h2 class="text-2xl text-primary font-bold font-onest">I'm</h2>
+          <h2 class="text-2xl text-accent font-bold uppercase font-onest">
+            Saidrexx
+          </h2>
+        </div>
+        <h3 class="text-lg font-bold font-onest text-primary">
+          Computer Systems Engineer
+        </h3>
+        <div class="flex gap-3 pt-2">
+          <button
+            class="group relative inline-flex max-h-[3.75rem] items-center justify-center rounded-xl px-4 py-2 text-lg outline-none transition duration-300 bg-secondary hidden pl-[3.25rem] sm:flex"
+          >
+            <Github
+              class="ease absolute left-5 translate-x-0 opacity-100 transition duration-300 group-hover:-translate-x-full group-hover:scale-x-50 group-hover:opacity-0 group-hover:blur-sm"
+              width={24}
+              height={24}
+              fill="#fff"
+            />
+            <span
+              class="ease translate-x-0 transition duration-300 group-hover:-translate-x-8 font-onest text-white"
+              >Github</span
+            >
+            <Arrow
+              class="ease absolute right-5 translate-x-full scale-x-50 opacity-0 blur-sm transition duration-300 group-hover:translate-x-0 group-hover:scale-x-100 group-hover:opacity-100 group-hover:blur-none"
+              width={24}
+              height={24}
+              fill="#fff"
+            />
+          </button>
+
+          <button
+            class="group relative inline-flex max-h-[3.75rem] items-center justify-center rounded-xl px-4 py-2 text-lg outline-none transition duration-300 bg-secondary hidden pl-[3.25rem] sm:flex"
+          >
+            <Linkedin
+              class="ease absolute left-5 translate-x-0 opacity-100 transition duration-300 group-hover:-translate-x-full group-hover:scale-x-50 group-hover:opacity-0 group-hover:blur-sm"
+              width={24}
+              height={24}
+              fill="#fff"
+            />
+            <span
+              class="ease translate-x-0 transition duration-300 group-hover:-translate-x-8 font-onest text-white"
+              >LinkedIn</span
+            >
+            <Arrow
+              class="ease absolute right-5 translate-x-full scale-x-50 opacity-0 blur-sm transition duration-300 group-hover:translate-x-0 group-hover:scale-x-100 group-hover:opacity-100 group-hover:blur-none"
+              width={24}
+              height={24}
+              fill="#fff"
+            />
+          </button>
+          <button
+            class="group relative inline-flex max-h-[3.75rem] items-center justify-center rounded-xl px-4 py-2 text-lg outline-none transition duration-300 bg-secondary hidden pl-[3.25rem] sm:flex"
+          >
+            <Cv
+              class="ease absolute left-5 translate-x-0 opacity-100 transition duration-300 group-hover:-translate-x-full group-hover:scale-x-50 group-hover:opacity-0 group-hover:blur-sm"
+              width={24}
+              height={24}
+              fill="#fff"
+            />
+            <span
+              class="ease translate-x-0 transition duration-300 group-hover:-translate-x-8 font-onest text-white"
+              >Curriculum</span
+            >
+            <Arrow
+              class="ease absolute right-5 translate-x-full scale-x-50 opacity-0 blur-sm transition duration-300 group-hover:translate-x-0 group-hover:scale-x-100 group-hover:opacity-100 group-hover:blur-none"
+              width={24}
+              height={24}
+              fill="#fff"
+            />
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>
